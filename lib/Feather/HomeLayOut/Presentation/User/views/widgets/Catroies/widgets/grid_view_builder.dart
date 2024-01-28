@@ -3,7 +3,6 @@ import 'package:flutter_application_1/Feather/HomeLayOut/Presentation/User/views
 import 'package:flutter_application_1/Feather/HomeLayOut/Presentation/User/views/widgets/Catroies/widgets/grenelconsultant/show_all_client.dart';
 import 'package:flutter_application_1/Feather/HomeLayOut/mangment/my_bloc.dart';
 import 'package:flutter_application_1/Feather/HomeLayOut/mangment/my_state.dart';
-import 'package:flutter_application_1/core/Model/catroies_model.dart';
 import 'package:flutter_application_1/core/utils/styles.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -13,7 +12,8 @@ class ListViewCatriosShowUser extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<MyBloc, MyState>(
-      listener: (context, state) {},
+      listener: (context, state) {
+      },
       builder: (context, state) {
         var bloc = MyBloc.get(context);
         return SingleChildScrollView(

@@ -58,13 +58,14 @@ class GradViewBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<MyBloc, MyState>(listener: (context, state) {
-     
+  
+       
     }, builder: (context, state) {
       
 
       return InkWell(
           onTap: () {
-  
+            MyBloc.get(context).dataanyconsult.clear();
             Navigator.push(
               context,
               MaterialPageRoute(

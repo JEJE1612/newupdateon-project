@@ -113,6 +113,6 @@ class ScafullGetAllConsltant extends MyState {}
 
 class ErrorGetGetAllConsltant extends MyState {}
 
-class LodingGetAlluser extends MyState {}
+class LodingGettypeconsultant extends MyState {}
 
-class ScafullGetAllUser extends MyState {}
+class ScafullGettypeconslutant extends MyState {}

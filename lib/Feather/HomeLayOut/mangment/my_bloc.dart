@@ -48,7 +48,7 @@ class MyBloc extends Cubit<MyState> {
   }
 
   List catroiesuser = [];
- 
+
   void getCaroiestouser() async {
     catroies.clear();
     catroiesnum.clear();
@@ -56,11 +56,12 @@ class MyBloc extends Cubit<MyState> {
     await FirebaseFirestore.instance.collection('Catroies').get().then((value) {
       for (var element in value.docs) {
         catroiesuser.add(CatroiesModel.fromJson(element.data()));
-       
+
         emit(ScafullGetcatroiesstate());
       }
     }).catchError((e) {});
   }
+
   var uid = CacheHealper.getData('uid', key: 'uid');
   void choosemycategory(String mychoose) {
     FirebaseFirestore.instance
@@ -104,8 +105,9 @@ class MyBloc extends Cubit<MyState> {
   }
 
   getAllcosultant(String? typecategory) async {
-    dataanyconsult.clear();
-    emit(LodingGetAlluser());
+    
+
+    emit(LodingGettypeconsultant());
     FirebaseFirestore.instance
         .collection('user')
         .where('type', isEqualTo: 'consulting')
@@ -116,8 +118,7 @@ class MyBloc extends Cubit<MyState> {
         dataanyconsult.add(element);
       }
       debugPrint(value.toString());
-      emit(ScafullGetAllUser());
-
+      emit(ScafullGettypeconslutant());
     }).catchError((e) {
       emit(ErrorGetGetAllConsltant());
     });
