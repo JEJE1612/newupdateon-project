@@ -104,7 +104,8 @@ class MyBloc extends Cubit<MyState> {
   }
 
   getAllcosultant(String? typecategory) async {
-    
+    dataanyconsult.clear();
+    emit(LodingGetAlluser());
     FirebaseFirestore.instance
         .collection('user')
         .where('type', isEqualTo: 'consulting')
@@ -116,6 +117,7 @@ class MyBloc extends Cubit<MyState> {
       }
       debugPrint(value.toString());
       emit(ScafullGetAllUser());
+
     }).catchError((e) {
       emit(ErrorGetGetAllConsltant());
     });
